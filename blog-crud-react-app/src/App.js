@@ -1,23 +1,28 @@
 import { Routes, Route } from 'react-router-dom';
-import PostsPage from './components/pages/PostsPage';
-import PostPage from './components/pages/PostPage';
-import PostAddPage from './components/pages/PostAddPage';
-import PostEditPage from './components/pages/PostEditPage';
-import AboutPage from './components/pages/AboutPage';
-import NotFoundPage from './components/pages/NotFoundPage';
+import Home from './components/pages/Home';
+import SinglePost from './components/pages/SinglePost';
+import PostAdd from './components/pages/PostAdd';
+import PostEdit from './components/pages/PostEdit';
+import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
+import { Container } from 'react-bootstrap';
+import Header from './components/views/Header';
+import Footer from './components/views/Footer';
 
 function App() {
   return (
-    <div className='App'>
+    <Container>
+      <Header />
       <Routes>
-        <Route path='/' element={<PostsPage />} />
-        <Route path='/post/:id' element={<PostPage />} />
-        <Route path='/post/add' element={<PostAddPage />} />
-        <Route path='/post/edit/:id' element={<PostEditPage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='*' element={<NotFoundPage />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/post/:id' element={<SinglePost />} />
+        <Route path='/post/add' element={<PostAdd />} />
+        <Route path='/post/edit/:id' element={<PostEdit />} />
+        <Route path='/about' element={<About />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
-    </div>
+      <Footer />
+    </Container>
   );
 }
 
