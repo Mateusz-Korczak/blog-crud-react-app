@@ -1,4 +1,5 @@
-import { Navbar, NavLink, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 const NavBar = () => {
   return (
     <Navbar
@@ -8,7 +9,7 @@ const NavBar = () => {
       className='mt-4 mb-4 rounded me-auto'
     >
       <Container>
-        <Navbar.Brand as={NavLink} to='/home'>
+        <Navbar.Brand as={NavLink} to='/'>
           BlogApp
         </Navbar.Brand>
         <Nav className='justify-content-end'>

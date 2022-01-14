@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import initialState from './initialState';
+import state from './initialState';
 import postsReducer from './postsRedux';
 
 const subreducers = {
@@ -8,7 +8,7 @@ const subreducers = {
 const reducer = combineReducers(subreducers);
 const store = createStore(
   reducer,
-  initialState,
+  state,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
