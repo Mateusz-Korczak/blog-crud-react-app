@@ -1,22 +1,19 @@
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react';
-import { connectAdvanced, useSelector } from 'react-redux';
-import { getPostsExceptSelected } from '../../redux/postsRedux';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../../redux/postsRedux';
-import { Navigate } from 'react-router-dom';
 
 const PopupModal = ({ postId }) => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const dispatch = useDispatch();
+
   const handleRemovePost = (e) => {
     e.preventDefault();
     dispatch(deletePost({ postId }));
   };
+
   return (
     <>
       <Button

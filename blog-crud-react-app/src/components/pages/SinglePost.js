@@ -10,9 +10,10 @@ import { NavLink } from 'react-router-dom';
 const SinglePost = () => {
   const { id } = useParams();
   const post = useSelector((state) => getSinglePost(state, id)).shift();
+
   if (!id) return <Navigate to='/' />;
   if (!post) return <Navigate to='/' />;
-  // else return <Navigate to='/post/:postId' />;
+
   return (
     <div className='single-post d-flex justify-content-center'>
       <section className='post col-8 mx-1'>
@@ -30,7 +31,6 @@ const SinglePost = () => {
       >
         EDIT
       </Button>
-
       <PopupModal postId={post.id}></PopupModal>
     </div>
   );
