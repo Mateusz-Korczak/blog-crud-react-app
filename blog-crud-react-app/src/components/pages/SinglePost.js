@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { getSinglePost } from '../../redux/postsRedux';
 import PopupModal from '../common/PopupModal';
+import { NavLink } from 'react-router-dom';
 
 const SinglePost = () => {
   const { id } = useParams();
@@ -22,9 +23,10 @@ const SinglePost = () => {
         </div>
       </section>
       <Button
+        as={NavLink}
         className='col-1 align-self-start mx-1'
         variant='outline-success'
-        href='/post/add'
+        to={`/post/edit/${post.id}`}
       >
         EDIT
       </Button>
