@@ -14,8 +14,8 @@ const Home = () => {
         </Button>
       </section>
       <section className='posts'>
-        <div class='container'>
-          <div class='row'>
+        <div className='container'>
+          <div className='row'>
             {posts.map((post) => (
               <Post key={post.id} {...post} />
             ))}
